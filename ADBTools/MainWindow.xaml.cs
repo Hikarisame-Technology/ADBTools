@@ -1,17 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace ADBTools
 {
@@ -24,5 +12,26 @@ namespace ADBTools
         {
             InitializeComponent();
         }
+
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            // 结束线程
+            Application.Current.Shutdown();
+        }
+
+        private void Window_Deactivated(object sender, EventArgs e)
+        {
+            // 修改最小化窗口为隐藏
+            if (WindowState == WindowState.Minimized)
+            {
+                Application.Current.MainWindow.Hide();
+            }
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            TitleBarTextBlock.Text = "ADBTools Ver" + (Application.ResourceAssembly.GetName().Version.ToString());
+        }
+
     }
 }

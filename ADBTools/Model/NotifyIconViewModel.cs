@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Windows;
 using System.Windows.Input;
-using SYSTools;
 
-namespace SYSTools.Model
+namespace ADBTools.Model
 {
     public class NotifyIconViewModel
     {

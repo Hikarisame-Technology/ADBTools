@@ -6,9 +6,34 @@
         xmlns:local="clr-namespace:ADBTools"
         xmlns:ui="http://schemas.inkore.net/lib/ui/wpf/modern"
         mc:Ignorable="d"
+        ui:ThemeManager.IsThemeAware="True"
         ui:WindowHelper.UseModernWindowStyle="True"
+        ui:WindowHelper.SystemBackdropType="Acrylic11"
+        ui:WindowHelper.CornerStyle="Round"
+        ui:TitleBar.IsBackButtonVisible="False"
+        ui:TitleBar.ButtonGlyphStyle="Fluent"
+        ui:TitleBar.Height="48"
+        ui:TitleBar.ExtendViewIntoTitleBar="True"
+        Loaded="Window_Loaded"
+        Closed="Window_Closed"
+        Deactivated="Window_Deactivated"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <TextBlock Width="90" Height="90">Hello</TextBlock>
+
+        <Grid x:Name="AppTitleBar"  
+      Height="48" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition x:Name="LeftPaddingColumn" Width="0"/>
+                <ColumnDefinition/>
+                <ColumnDefinition x:Name="RightPaddingColumn" Width="0"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock x:Name="TitleBarTextBlock" 
+               FontWeight="Regular"
+               FontSize="12"
+               Grid.Column="1"
+               VerticalAlignment="Center"
+               Margin="16,0,0,0"/>
+        </Grid>
+
     </Grid>
 </Window>
