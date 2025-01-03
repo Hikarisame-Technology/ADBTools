@@ -18,8 +18,11 @@
         Closed="Window_Closed"
         Deactivated="Window_Deactivated"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-
+    <Grid x:Name="MainContent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
         <Grid x:Name="AppTitleBar"  
       Height="48" HorizontalAlignment="Left" VerticalAlignment="Top">
             <Grid.ColumnDefinitions>
@@ -30,9 +33,22 @@
             <TextBlock x:Name="TitleBarTextBlock" 
                FontWeight="Regular"
                FontSize="12"
-               Grid.Column="1"
+               Grid.Column="1" 
+               Grid.Row="0"
                VerticalAlignment="Center"
-               Margin="16,0,0,0"/>
+               Margin="16,0,0,0"
+               >
+                ADB Tools
+            </TextBlock>
+            <TextBlock x:Name="TitleBarTextBlock2" 
+               FontWeight="Regular"
+               FontSize="12"
+               Grid.Column="2" 
+               VerticalAlignment="Center"
+               Margin="16,0,0,0"
+               >
+                ADB Tools
+            </TextBlock>
         </Grid>
 
     </Grid>
